@@ -1115,7 +1115,7 @@ IntLookup_GetPyIntOrError(IntLookup *self, PyObject *key, PathNode *path) {
 
 static PyTypeObject IntLookup_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core.IntLookup",
+    .tp_name = "msgspec_m._core.IntLookup",
     .tp_basicsize = sizeof(IntLookup),
     .tp_itemsize = 1,
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC,
@@ -1299,7 +1299,7 @@ StrLookup_GetOrError(
 
 static PyTypeObject StrLookup_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core.StrLookup",
+    .tp_name = "msgspec_m._core.StrLookup",
     .tp_basicsize = sizeof(StrLookup),
     .tp_itemsize = sizeof(StrLookupEntry),
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC,
@@ -1533,7 +1533,7 @@ static PyMethodDef Raw_methods[] = {
 
 static PyTypeObject Raw_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec.Raw",
+    .tp_name = "msgspec_m.Raw",
     .tp_doc = Raw__doc__,
     .tp_basicsize = sizeof(Raw),
     .tp_itemsize = sizeof(char),
@@ -1896,7 +1896,7 @@ static PyObject *
 Meta_repr(Meta *self) {
     strbuilder builder = {0};
     bool first = true;
-    if (!strbuilder_extend_literal(&builder, "msgspec.Meta(")) return NULL;
+    if (!strbuilder_extend_literal(&builder, "msgspec_m.Meta(")) return NULL;
     /* sizeof(#field) is the length of the field name + 1 (null terminator). We
      * want the length of field name + 1 (for the `=`). */
 #define DO_REPR(field) do { \
@@ -2075,7 +2075,7 @@ static PyMemberDef Meta_members[] = {
 
 static PyTypeObject Meta_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec.Meta",
+    .tp_name = "msgspec_m.Meta",
     .tp_doc = Meta__doc__,
     .tp_basicsize = sizeof(Meta),
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC,
@@ -2133,7 +2133,7 @@ static PyMethodDef nodefault_methods[] = {
 
 PyTypeObject NoDefault_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core.NoDefaultType",
+    .tp_name = "msgspec_m._core.NoDefaultType",
     .tp_doc = nodefault__doc__,
     .tp_repr = nodefault_repr,
     .tp_flags = Py_TPFLAGS_DEFAULT,
@@ -2236,7 +2236,7 @@ static PyNumberMethods unset_as_number = {
 
 PyTypeObject Unset_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec.UnsetType",
+    .tp_name = "msgspec_m.UnsetType",
     .tp_doc = unset__doc__,
     .tp_repr = unset_repr,
     .tp_flags = Py_TPFLAGS_DEFAULT,
@@ -2354,7 +2354,7 @@ static PyMemberDef Factory_members[] = {
 
 static PyTypeObject Factory_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core.Factory",
+    .tp_name = "msgspec_m._core.Factory",
     .tp_basicsize = sizeof(Factory),
     .tp_itemsize = 0,
     .tp_new = Factory_new,
@@ -2484,7 +2484,7 @@ static PyMemberDef Field_members[] = {
 
 static PyTypeObject Field_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core.Field",
+    .tp_name = "msgspec_m._core.Field",
     .tp_doc = Field__doc__,
     .tp_basicsize = sizeof(Field),
     .tp_itemsize = 0,
@@ -6669,7 +6669,7 @@ StructInfo_dealloc(StructInfo *self)
 
 static PyTypeObject StructInfo_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core.StructInfo",
+    .tp_name = "msgspec_m._core.StructInfo",
     .tp_basicsize = sizeof(StructInfo),
     .tp_itemsize = sizeof(TypeNode *),
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC,
@@ -7099,7 +7099,7 @@ PyDoc_STRVAR(StructConfig__doc__,
 
 static PyTypeObject StructConfig_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec.structs.StructConfig",
+    .tp_name = "msgspec_m.structs.StructConfig",
     .tp_doc = StructConfig__doc__,
     .tp_basicsize = sizeof(StructConfig),
     .tp_itemsize = 0,
@@ -7143,7 +7143,7 @@ static PyGetSetDef StructMeta_getset[] = {
 
 static PyTypeObject StructMetaType = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core.StructMeta",
+    .tp_name = "msgspec_m._core.StructMeta",
     .tp_basicsize = sizeof(StructMetaObject),
     .tp_itemsize = 0,
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_TYPE_SUBCLASS | Py_TPFLAGS_HAVE_GC | _Py_TPFLAGS_HAVE_VECTORCALL,
@@ -8065,7 +8065,7 @@ static PyGetSetDef StructMixin_getset[] = {
 
 static PyTypeObject StructMixinType = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core._StructMixin",
+    .tp_name = "msgspec_m._core._StructMixin",
     .tp_basicsize = 0,
     .tp_itemsize = 0,
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE,
@@ -8214,7 +8214,7 @@ LiteralInfo_dealloc(LiteralInfo *self)
 
 static PyTypeObject LiteralInfo_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core.LiteralInfo",
+    .tp_name = "msgspec_m._core.LiteralInfo",
     .tp_basicsize = sizeof(LiteralInfo),
     .tp_itemsize = 0,
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC,
@@ -8378,7 +8378,7 @@ TypedDictInfo_dealloc(TypedDictInfo *self)
 
 static PyTypeObject TypedDictInfo_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core.TypedDictInfo",
+    .tp_name = "msgspec_m._core.TypedDictInfo",
     .tp_basicsize = sizeof(TypedDictInfo),
     .tp_itemsize = sizeof(TypedDictField),
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC,
@@ -8598,7 +8598,7 @@ DataclassInfo_dealloc(DataclassInfo *self)
 
 static PyTypeObject DataclassInfo_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core.DataclassInfo",
+    .tp_name = "msgspec_m._core.DataclassInfo",
     .tp_basicsize = sizeof(DataclassInfo),
     .tp_itemsize = sizeof(DataclassField),
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC,
@@ -8739,7 +8739,7 @@ NamedTupleInfo_dealloc(NamedTupleInfo *self)
 
 static PyTypeObject NamedTupleInfo_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec._core.NamedTupleInfo",
+    .tp_name = "msgspec_m._core.NamedTupleInfo",
     .tp_basicsize = sizeof(NamedTupleInfo),
     .tp_itemsize = sizeof(TypeNode *),
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC,
@@ -8896,7 +8896,7 @@ static PyMethodDef Ext_methods[] = {
 
 static PyTypeObject Ext_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec.msgpack.Ext",
+    .tp_name = "msgspec_m.msgpack.Ext",
     .tp_doc = Ext__doc__,
     .tp_basicsize = sizeof(Ext),
     .tp_itemsize = 0,
@@ -13224,7 +13224,7 @@ static struct PyMethodDef Encoder_methods[] = {
 
 static PyTypeObject Encoder_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec.msgpack.Encoder",
+    .tp_name = "msgspec_m.msgpack.Encoder",
     .tp_doc = Encoder__doc__,
     .tp_basicsize = sizeof(Encoder),
     .tp_dealloc = (destructor)Encoder_dealloc,
@@ -14351,7 +14351,7 @@ static struct PyMethodDef JSONEncoder_methods[] = {
 
 static PyTypeObject JSONEncoder_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec.json.Encoder",
+    .tp_name = "msgspec_m.json.Encoder",
     .tp_doc = JSONEncoder__doc__,
     .tp_basicsize = sizeof(Encoder),
     .tp_dealloc = (destructor)Encoder_dealloc,
@@ -14555,7 +14555,7 @@ Decoder_repr(Decoder *self) {
     }
     typstr = PyObject_Repr(self->orig_type);
     if (typstr != NULL) {
-        out = PyUnicode_FromFormat("msgspec.msgpack.Decoder(%U)", typstr);
+        out = PyUnicode_FromFormat("msgspec_m.msgpack.Decoder(%U)", typstr);
     }
     Py_XDECREF(typstr);
     Py_ReprLeave((PyObject *)self);
@@ -16149,7 +16149,7 @@ static PyMemberDef Decoder_members[] = {
 
 static PyTypeObject Decoder_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec.msgpack.Decoder",
+    .tp_name = "msgspec_m.msgpack.Decoder",
     .tp_doc = Decoder__doc__,
     .tp_basicsize = sizeof(Decoder),
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC,
@@ -16462,7 +16462,7 @@ JSONDecoder_repr(JSONDecoder *self) {
     }
     typstr = PyObject_Repr(self->orig_type);
     if (typstr != NULL) {
-        out = PyUnicode_FromFormat("msgspec.json.Decoder(%U)", typstr);
+        out = PyUnicode_FromFormat("msgspec_m.json.Decoder(%U)", typstr);
     }
     Py_XDECREF(typstr);
     Py_ReprLeave((PyObject *)self);
@@ -19199,7 +19199,7 @@ static PyMemberDef JSONDecoder_members[] = {
 
 static PyTypeObject JSONDecoder_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    .tp_name = "msgspec.json.Decoder",
+    .tp_name = "msgspec_m.json.Decoder",
     .tp_doc = JSONDecoder__doc__,
     .tp_basicsize = sizeof(JSONDecoder),
     .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC,
@@ -21966,7 +21966,7 @@ msgspec_traverse(PyObject *m, visitproc visit, void *arg)
 
 static struct PyModuleDef msgspecmodule = {
     PyModuleDef_HEAD_INIT,
-    .m_name = "msgspec._core",
+    .m_name = "msgspec_m._core",
     .m_size = sizeof(MsgspecState),
     .m_methods = msgspec_methods,
     .m_traverse = msgspec_traverse,
@@ -22088,28 +22088,28 @@ PyInit__core(void)
 
     /* Initialize the exceptions. */
     st->MsgspecError = PyErr_NewExceptionWithDoc(
-        "msgspec.MsgspecError",
+        "msgspec_m.MsgspecError",
         "Base class for all Msgspec exceptions",
         NULL, NULL
     );
     if (st->MsgspecError == NULL)
         return NULL;
     st->EncodeError = PyErr_NewExceptionWithDoc(
-        "msgspec.EncodeError",
+        "msgspec_m.EncodeError",
         "An error occurred while encoding an object",
         st->MsgspecError, NULL
     );
     if (st->EncodeError == NULL)
         return NULL;
     st->DecodeError = PyErr_NewExceptionWithDoc(
-        "msgspec.DecodeError",
+        "msgspec_m.DecodeError",
         "An error occurred while decoding an object",
         st->MsgspecError, NULL
     );
     if (st->DecodeError == NULL)
         return NULL;
     st->ValidationError = PyErr_NewExceptionWithDoc(
-        "msgspec.ValidationError",
+        "msgspec_m.ValidationError",
         "The message didn't match the expected schema",
         st->DecodeError, NULL
     );
@@ -22158,7 +22158,7 @@ PyInit__core(void)
 #endif
     Py_DECREF(temp_module);
 
-    temp_module = PyImport_ImportModule("msgspec._utils");
+    temp_module = PyImport_ImportModule("msgspec_m._utils");
     if (temp_module == NULL) return NULL;
     SET_REF(concrete_types, "_CONCRETE_TYPES");
     SET_REF(get_type_hints, "get_type_hints");
@@ -22265,7 +22265,7 @@ PyInit__core(void)
     PyState_AddModule(m, &msgspecmodule);
     st->StructType = PyObject_CallFunction(
         (PyObject *)&StructMetaType, "s(O){ssss}", "Struct", &StructMixinType,
-        "__module__", "msgspec", "__doc__", Struct__doc__
+        "__module__", "msgspec_m", "__doc__", Struct__doc__
     );
     if (st->StructType == NULL) return NULL;
     Py_INCREF(st->StructType);
