@@ -39,8 +39,8 @@ try:
 except ImportError:
     attrs = None
 
-import msgspec
-from msgspec import Meta, Struct, ValidationError, UNSET, UnsetType
+import msgspec_m as msgspec
+from msgspec_m import Meta, Struct, ValidationError, UNSET, UnsetType
 
 UTC = datetime.timezone.utc
 

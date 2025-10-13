@@ -1,6 +1,6 @@
 import textwrap
 
-import msgspec
+import msgspec_m as msgspec
 
 from utils import temp_module
 

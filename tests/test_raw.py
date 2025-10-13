@@ -6,7 +6,7 @@ import weakref
 
 import pytest
 
-import msgspec
+import msgspec_m as msgspec
 
 
 def test_raw_noargs():

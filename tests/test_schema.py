@@ -26,8 +26,8 @@ from typing import (
 import pytest
 from utils import temp_module
 
-import msgspec
-from msgspec import Meta
+import msgspec_m as msgspec
+from msgspec_m import Meta
 
 
 T = TypeVar("T")

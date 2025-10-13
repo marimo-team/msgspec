@@ -22,7 +22,7 @@ from typing import (
 
 import pytest
 
-import msgspec
+import msgspec_m as msgspec
 
 UTC = datetime.timezone.utc
 

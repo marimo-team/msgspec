@@ -13,9 +13,9 @@ from typing import Any, List, Optional, Generic, TypeVar
 import pytest
 from utils import temp_module
 
-import msgspec
-from msgspec import NODEFAULT, UNSET, Struct, defstruct, field
-from msgspec.structs import StructConfig
+import msgspec_m as msgspec
+from msgspec_m import NODEFAULT, UNSET, Struct, defstruct, field
+from msgspec_m.structs import StructConfig
 
 if hasattr(copy, "replace"):
     # Added in Python 3.13

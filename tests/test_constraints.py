@@ -5,8 +5,8 @@ from typing import Dict, List, Union, Annotated
 
 import pytest
 
-import msgspec
-from msgspec import Meta
+import msgspec_m as msgspec
+from msgspec_m import Meta
 
 
 @pytest.fixture(params=["json", "msgpack"])
