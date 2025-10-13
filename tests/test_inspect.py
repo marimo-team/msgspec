@@ -698,9 +698,9 @@ def test_unset_fields(kind):
 def test_self_referential_objects(kind):
     if kind == "struct":
         code = """
-        import msgspec
+        import msgspec_m
 
-        class Node(msgspec.Struct):
+        class Node(msgspec_m.Struct):
             child: "Node"
         """
     elif kind == "namedtuple":

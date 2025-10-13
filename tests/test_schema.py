@@ -1145,13 +1145,13 @@ def test_generic_metadata():
 
 def test_component_names_collide():
     s1 = """
-    import msgspec
-    Ex = msgspec.defstruct("Ex", [("x", int), ("y", int)])
+    import msgspec_m
+    Ex = msgspec_m.defstruct("Ex", [("x", int), ("y", int)])
     """
 
     s2 = """
-    import msgspec
-    Ex = msgspec.defstruct("Ex", [("a", str), ("b", str)])
+    import msgspec_m
+    Ex = msgspec_m.defstruct("Ex", [("a", str), ("b", str)])
     """
 
     with temp_module(s1) as m1, temp_module(s2) as m2:
