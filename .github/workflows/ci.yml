@@ -24,7 +24,7 @@ on:
 jobs:
   lint:
     name: Run static analysis
-    runs-on: ubuntu-p-small
+    runs-on: "${{ vars.CI_RUNNER_SMALL || 'ubuntu-latest' }}"
 
     steps:
       - uses: actions/checkout@v4
@@ -79,7 +79,7 @@ jobs:
 
   build_wheels:
     name: Build wheels on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    runs-on: "${{ matrix.os == 'windows-latest' && (vars.CI_RUNNER_WINDOWS || 'windows-latest') || (matrix.os) }}"
     strategy:
       matrix:
         os: [ubuntu-latest, macos-13, windows-latest]
@@ -122,7 +122,7 @@ jobs:
 
   build_sdist:
     name: Build Source Distribution
-    runs-on: ubuntu-p-small
+    runs-on: "${{ vars.CI_RUNNER_SMALL || 'ubuntu-latest' }}"
     if: (github.event_name == 'release' && github.event.action == 'published') || github.event_name == 'workflow_dispatch'
 
     steps:
@@ -146,7 +146,7 @@ jobs:
 
   upload_pypi:
     needs: [build_wheels, build_sdist]
-    runs-on: ubuntu-p-small
+    runs-on: "${{ vars.CI_RUNNER_SMALL || 'ubuntu-latest' }}"
     permissions:
       id-token: write
     if: (github.event_name == 'release' && github.event.action == 'published') || github.event_name == 'workflow_dispatch'
