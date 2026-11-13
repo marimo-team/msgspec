@@ -24,7 +24,7 @@ on:
 jobs:
   lint:
     name: Run static analysis
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-p-small
 
     steps:
       - uses: actions/checkout@v4
@@ -122,7 +122,7 @@ jobs:
 
   build_sdist:
     name: Build Source Distribution
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-p-small
     if: (github.event_name == 'release' && github.event.action == 'published') || github.event_name == 'workflow_dispatch'
 
     steps:
@@ -146,7 +146,7 @@ jobs:
 
   upload_pypi:
     needs: [build_wheels, build_sdist]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-p-small
     permissions:
       id-token: write
     if: (github.event_name == 'release' && github.event.action == 'published') || github.event_name == 'workflow_dispatch'
